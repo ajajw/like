@@ -3,7 +3,6 @@ from logging import Handler, handlers
 from multiprocessing import context
 import os
 from signal import Handlers
-from turtle import update
 import requests
 import time
 import string
@@ -208,7 +207,7 @@ async def auth(message: types.Message):
     sid = apigate2["sid"]
     
     
-    apis = uniproxy.get(f"https://projectslost.xyz/bin/?bin={BIN}").json()
+    apis = uniproxy.get(f"https://projectslost.xyz/bin/?bin={cc[:6]}").json()
     result=apis['status']
     banke=apis['bank']
     bank=banke['name']
