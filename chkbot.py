@@ -3,6 +3,7 @@ from logging import Handler, handlers
 from multiprocessing import context
 import os
 from signal import Handlers
+from turtle import update
 import requests
 import time
 import string
@@ -428,7 +429,7 @@ async def da(message: types.Message):
     mail = "darwinmoreno366773@yahoo.com"
 
 
-    apis99 = uniproxy.get(f"https://projectslost.xyz/bin/?bin={BIN}").json()
+    apis99 = uniproxy.get(f"https://projectslost.xyz/bin/?bin={cc[:6]}").json()
     result=apis99['status']
     banke=apis99['bank']
     bank=banke['name']
