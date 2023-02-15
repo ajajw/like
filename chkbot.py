@@ -81,8 +81,7 @@ async def random_value(call: types.CallbackQuery):
 
 @iniciar.message_handler(commands=['start'])
 async def start_answer(message: types.Message):
-    await message.answer_photo('https://imgur.com/ZO72OAT', "𝘽𝙞𝙚𝙣𝙫𝙚𝙣𝙞𝙙𝙤 𝙖 𝙔𝙤𝙞𝙢𝙞𝙮𝙖𝘾𝙝𝙠𝘽𝙤𝙩, 𝙪𝙣 𝙗𝙤𝙩 𝙘𝙧𝙚𝙖𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙖𝙧𝙖 𝙡𝙤𝙨 𝙥𝙖𝙣𝙖𝙨. 
-𝙈𝙞 𝙊𝙬𝙣𝙚𝙧 𝙚𝙨 @𝘿𝙞𝙚𝙜𝙤𝘼𝙆𝙆 , 𝙪𝙩𝙞𝙡𝙞𝙯𝙖 𝙚𝙡 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 /𝙘𝙢𝙙𝙨 𝙥𝙖𝙧𝙖 𝙫𝙚𝙧 𝙥𝙪𝙚𝙨 𝙢𝙞𝙨 𝙘𝙤𝙢𝙖𝙣𝙙𝙤𝙨 𝙭𝙙", reply_markup=keyboard_inline)
+    await message.answer_photo('https://imgur.com/ZO72OAT', "a", reply_markup=keyboard_inline)
 
 
 ########################## FIN COMANDO START ################################
@@ -659,7 +658,7 @@ async def pene(message: types.Message):
     cvv = spli[3]
     m1 = await contra.edit_text(f"<b>💳ᴄᴀʀᴅ: {ccs}\nᴘʀᴏᴄᴇss: [🔴]</b>")
 
-   headers666 = {
+   headers77 = {
    'accept': '*/*',
    'content-type': 'application/x-www-form-urlencoded',
    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
