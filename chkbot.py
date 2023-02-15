@@ -664,11 +664,11 @@ async def pene(message: types.Message):
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
     }
 
-   session = requests.session()
+    session = requests.session()
 
-   api1 = session.post("https://r.stripe.com/0", headers=headers666
+    api1 = session.post("https://r.stripe.com/0", headers=headers666
 
-   await message.reply("good")
+    await message.reply("good")
 
 print("CODIGO EN LINEA")
 logging.basicConfig(level=logging.INFO)
