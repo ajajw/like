@@ -225,10 +225,15 @@ async def pene(message: types.Message):
     cvv = spli[3]
     m1 = await contra.edit_text(f"<b>💳ᴄᴀʀᴅ: {ccs}\nᴘʀᴏᴄᴇss: [🔴]</b>")
 
+    headels = {
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+    'accept': 'application/json',
+    'content-type': 'application/x-www-form-urlencoded'
+    }
 
     session = requests.session()
 
-    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm").json()
+    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels).json()
     
     await message.reply(f"{api201}")
 
