@@ -288,7 +288,7 @@ async def pene(message: types.Message):
 [Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
 
 
-    if 'Your card's security code is invalid.' in msgg:
+    if "Your card's security code is invalid." in msgg:
         return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
