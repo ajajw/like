@@ -189,7 +189,7 @@ async def da(message: types.Message):
     time.sleep(1)
     user = message.from_user.id
     if user in admins :
-        await contra.edit_text('<b>Efectivamente tienes premium bb✅</b>')
+        await contra.edit_text('<b>Efectivamente tienes premium bb✅ | Gate Off ❌ | Reason: Me da paja arreglarlo xd</b>')
     
     else:
         await contra.edit_text('❌ <b>No tienes acceso para utilizar este comando ❌ Contacta a</b> @DiegoAkk.')
@@ -263,8 +263,8 @@ async def pene(message: types.Message):
     result=apis17['status']
     banke=apis17['bank']
     bank=banke['name']
-    brand=apis1['brand']
-    bn=apis1['query']
+    brand=apis17['brand']
+    bn=apis17['query']
     typ=apis17['type']
     lv=apis17['level']
     country1=apis17['country']
