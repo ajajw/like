@@ -268,7 +268,7 @@ async def pene(message: types.Message):
     typ=apis17['type']
     lv=apis17['level']
     country1=apis17['country']
-    country=country17['name']
+    country=country1['name']
 
     final = time.perf_counter()
  
