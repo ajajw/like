@@ -278,7 +278,7 @@ async def pene(message: types.Message):
 
 
     if "Your card was declined." in msgg:
-        await m3.edit_text(f"""
+        await message.reply(f"""
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -294,7 +294,7 @@ async def pene(message: types.Message):
 
 
     elif "Your card's security code is invalid." in msgg:
-          await m3.edit_text(f"""
+          await message.reply(f"""
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -310,7 +310,7 @@ async def pene(message: types.Message):
           
       
     elif "Your card's expiration year is invalid." in msgg:
-          await m3.edit_text(f"""
+          await message.reply(f"""
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -325,7 +325,7 @@ async def pene(message: types.Message):
 [Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
 
     elif "Your card number is incorrect." in msgg:
-          await m3.edit_text(f"""
+          await message.reply(f"""
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
@@ -340,7 +340,7 @@ async def pene(message: types.Message):
 [Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
 
     elif "Your card has insufficient funds." in msgg:
-          await m3.edit_text(f"""
+          await message.reply(f"""
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Approved</b> ✅
@@ -355,7 +355,7 @@ async def pene(message: types.Message):
 [Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk """)
 
     else:
-        await m3.edit_text(f"""
+        await message.reply(f"""
 <b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
 [🝂] 𝐂𝐂: <code>{ccs}</code> 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Approved</b> ✅
