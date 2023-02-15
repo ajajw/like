@@ -658,11 +658,11 @@ async def pene(message: types.Message):
     cvv = spli[3]
     m1 = await contra.edit_text(f"<b>💳ᴄᴀʀᴅ: {ccs}\nᴘʀᴏᴄᴇss: [🔴]</b>")
 
-   headers77 = {
-   'accept': '*/*',
-   'content-type': 'application/x-www-form-urlencoded',
-   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
-   }
+    headers77 = {
+    'accept': '*/*',
+    'content-type': 'application/x-www-form-urlencoded',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
+    }
 
    session = requests.session()
 
