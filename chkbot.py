@@ -251,9 +251,9 @@ async def pene(message: types.Message):
 
     session = requests.session()
 
-    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels, data=dat4)
+    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels, data=dat4).json()
     
-    await message.reply("rico")
+    await message.reply(f"{api201}")
 
 print("CODIGO EN LINEA")
 logging.basicConfig(level=logging.INFO)
