@@ -666,7 +666,7 @@ async def pene(message: types.Message):
 
     session = requests.session()
 
-    api1 = session.post("https://r.stripe.com/0", headers=headers666
+    api1 = session.post("https://r.stripe.com/0", headers=headers77)
 
     await message.reply("good")
 
