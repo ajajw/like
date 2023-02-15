@@ -225,27 +225,7 @@ async def pene(message: types.Message):
     cvv = spli[3]
     m1 = await contra.edit_text(f"<b>💳ᴄᴀʀᴅ: {ccs}\nᴘʀᴏᴄᴇss: [🔴]</b>")
 
-    paylod = {
-    'receipt_email': 'djfjdjffj@gmail.com',
-    'payment_method_data[type]': 'card',
-    'payment_method_data[billing_details][email]': 'djfjdjffj@gmail.com',
-    'payment_method_data[billing_details][name]': 'dd',
-    'payment_method_data[billing_details][address][postal_code]': '10081',
-    'payment_method_data[card][number]': cc,
-    'payment_method_data[card][cvc]': cvv,
-    'payment_method_data[card][exp_month]': mes,
-    'payment_method_data[card][exp_year]': ano,
-    'payment_method_data[guid]': 'e97f7c39-c716-4d6f-9bcf-567d84a828419950f7',
-    'payment_method_data[muid]': 'a2e62b85-15c5-4dd1-be12-03b1db1a2396be9b77',
-    'payment_method_data[sid]': '0c3ac9c2-17e9-43a0-9bba-cb1174e25c5e83d67d',
-    'payment_method_data[pasted_fields]': 'number',
-    'payment_method_data[payment_user_agent]': 'stripe.js/ed398fe5b; stripe-js-v3/ed398fe5b',
-    'payment_method_data[time_on_page]': '499164',
-    'expected_payment_method_type': 'card',
-    'use_stripe_sdk': 'true',
-    'key': 'pk_live_DzYuDiszHWOjwN44sVfaT41s',
-    'client_secret': 'pi_3MbaLOJeGhFfMJgC1jwsOBWM_secret_pLuyaWQpQqSY8B7mabt9q0mTY',
-    }
+    dat4 = f'receipt_email=djfjdjffj%40gmail.com&payment_method_data[type]=card&payment_method_data[billing_details][email]=djfjdjffj%40gmail.com&payment_method_data[billing_details][name]=dd&payment_method_data[billing_details][address][postal_code]=10081&payment_method_data[card][number]={cc}&payment_method_data[card][cvc]={cvv}&payment_method_data[card][exp_month]={mes}&payment_method_data[card][exp_year]={ano}&payment_method_data[guid]=e97f7c39-c716-4d6f-9bcf-567d84a828419950f7&payment_method_data[muid]=a2e62b85-15c5-4dd1-be12-03b1db1a2396be9b77&payment_method_data[sid]=0c3ac9c2-17e9-43a0-9bba-cb1174e25c5e83d67d&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Fed398fe5b%3B+stripe-js-v3%2Fed398fe5b&payment_method_data[time_on_page]=499164&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_DzYuDiszHWOjwN44sVfaT41s&client_secret=pi_3MbaLOJeGhFfMJgC1jwsOBWM_secret_pLuyaWQpQqSY8B7mabt9q0mTY'
 
     headels = {
     ':authority': 'api.stripe.com',
