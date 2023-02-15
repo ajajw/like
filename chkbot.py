@@ -188,6 +188,8 @@ async def auth(message: types.Message):
     ano = spli[2]
     cvv = spli[3] 
     m1 = await message.reply(f"<b>💳ᴄᴀʀᴅ: {ccs}\nᴘʀᴏᴄᴇss: [🔴]</b>")
+    ID = message.from_user.id
+    FIRST = message.from_user.first_name
     
     nombre = "Andres"
     correo = "jefersonbenthanpalacio@gmail.com"
@@ -470,8 +472,6 @@ async def da(message: types.Message):
     data = f'type=card&card[number]={cc}&card[cvc]={cvv}&card[exp_month]={mes}&card[exp_year]={ano}&billing_details[name]={nombre}+moreno&billing_details[email]=zdxrnavckbhwh%40triots.com&billing_details[address][country]=US&billing_details[address][postal_code]=10080&guid={guid}&muid={muid}&sid={sid}&key=pk_live_51LsYR6AKFjq10TnePvmDsUU6mDT7UzQSmvz3RchEeBz6AQqfrnH9L16mD8hcajweCoaPUxDuCKVPFZdPjBl4f5XC00JTPKVfby&payment_user_agent=stripe.js%2Fe9a259df8%3B+stripe-js-v3%2Fe9a259df8%3B+checkout'
 
     response333 = uniproxy.post('https://api.stripe.com/v1/payment_methods', headers=headers33, data=data).json()
-    id = response333['id']
-
 
     headers44 = {
     'authority': 'api.stripe.com',
