@@ -251,7 +251,7 @@ async def pene(message: types.Message):
 
     session = requests.session()
 
-    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels, payload=paylod)
+    api201 = session.post("https://api.stripe.com/v1/payment_intents/pi_3MbaLOJeGhFfMJgC1jwsOBWM/confirm", headers=headels, data=dat4)
     
     await message.reply(f"{api201}")
 
