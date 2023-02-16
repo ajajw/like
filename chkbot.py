@@ -81,7 +81,7 @@ async def random_value(call: types.CallbackQuery):
 
 @iniciar.message_handler(commands=['start'])
 async def start_answer(message: types.Message):
-    await message.answer_photo('https://imgur.com/ZO72OAT', "𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒐 𝒂 𝒀𝒐𝒊𝒎𝒊𝒚𝒂𝑪𝒉𝒌𝑩𝒐𝒕, 𝒎𝒊 𝒄𝒓𝒆𝒂𝒅𝒐𝒓 𝒆𝒔 @𝑫𝒊𝒆𝒈𝒐𝑨𝑲𝑲. 𝑸𝒖𝒆 𝒍𝒂 𝒑𝒂𝒔𝒆𝒔 𝒓𝒊𝒄𝒐", reply_markup=keyboard_inline)
+    await message.answer_photo('https://imgur.com/ZO72OAT', "𝑩𝒊𝒆𝒏𝒗𝒆𝒏𝒊𝒅𝒐 𝒂 𝒀𝒐𝒊𝒎𝒊𝒚𝒂𝑪𝒉𝒌𝑩𝒐𝒕, 𝒎𝒊 𝒄𝒓𝒆𝒂𝒅𝒐𝒓 𝒆𝒔 @𝑫𝒊𝒆𝒈𝒐𝑨𝑲𝑲. 𝑸𝒖𝒆 𝒍𝒂 𝒑𝒂𝒔𝒆𝒔 𝒓𝒊𝒄𝒐", "hola", reply_markup=keyboard_inline)
 
 
 ########################## FIN COMANDO START ################################
