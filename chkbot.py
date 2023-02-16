@@ -273,19 +273,7 @@ async def pene(message: types.Message):
     msgg = api201["error"]["message"]
 
     if 'Your card was declined.' in msgg:
-        await message.reply(f"""
-<b>𐎢 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 ꜱᴛʀɪᴘᴇ ᴄʜᴀʀɢᴇᴅ 25$ </b>
-[🝂] 𝐂𝐂: <code>{ccs}</code>
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: <b>Declined</b> ❌
-[🝂] 𝐌𝐞𝐬𝐬𝐚𝐠𝐞: 𝗬𝗼𝘂𝗿 𝗰𝗮𝗿𝗱 𝘄𝗮𝘀 𝗱𝗲𝗰𝗹𝗶𝗻𝗲𝗱.
-—————— 𝐁𝐢𝐧 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐁𝐢𝐧: <code>{bn}|{brand}|{typ}|{lv}</code>
-[Ϟ] 𝐁𝐚𝐧𝐤: <code>{bank}</code>
-[Ϟ] 𝐂𝐨𝐮𝐧𝐭𝐫𝐲: </code>{country}</code>
-—————— 𝐁𝐨𝐭 𝐈𝐧𝐟𝐨 ——————
-[Ϟ] 𝐓𝐢𝐦𝐞:  </code>{final-ini:0.2} (segundos)</code>
-[Ϟ] 𝐂𝐡𝐞𝐜𝐤𝐞𝐝 𝐁𝐲: <a href="tg://user?id={ID}">{FIRST}</a>
-[Ϟ] 𝐁𝐨𝐭 𝐁𝐲: @DiegoAkk""")
+        await message.reply(f"CC:{ccs}")
 
 
     if 'invalid_cvc' in ko:
