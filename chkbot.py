@@ -273,8 +273,11 @@ async def pene(message: types.Message):
     msgg = api201["error"]["message"]
 
     if 'Your card was declined.' in msgg:
-        await message.reply("CC:{ccs} 
-[🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: Declined ❌")
+        await message.reply("CC:{ccs}
+status declined
+response declined
+tim 13s
+bot by owwnee")
 
 
     if 'invalid_cvc' in ko:
