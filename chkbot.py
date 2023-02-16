@@ -273,7 +273,7 @@ async def pene(message: types.Message):
     msgg = api201["error"]["message"]
 
     if 'Your card was declined.' in msgg:
-        await message.reply(f"CC:{ccs} 
+        await message.reply("CC:{ccs} 
 [🝂] 𝐒𝐭𝐚𝐭𝐮𝐬: Declined ❌")
 
 
